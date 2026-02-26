@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO SDI 2026 | International Conference</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    line-height:1.6;
+}
+
+/* About University Layout */
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.about-image img{
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-text{
+    text-align:justify;
+}
+
+
+/* About Geo Layout */
+.about-geo-container{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.about-geo-text{
+    flex:1;
+    text-align:justify;
+}
+
+.about-geo-image img{
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .about-geo-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-geo-image img{
+        width:100%;
+    }
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-image img{
+        width:100%;
+    }
+}
+
+/* Navigation */
+nav{
+    background:linear-gradient(45deg,#003973,#005aa7);
+    padding:15px 40px;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* Hero */
+.hero{
+    background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-overlay{
+    background:rgba(0,0,0,0.65);
+    padding:50px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:1.5rem;
+    font-weight:400;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:#00c6ff;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* Sections */
+section{
+    padding:80px 40px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2rem;
+    color:#003973;
+}
+
+/* Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+/* Table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#005aa7;
+    color:white;
+}
+
+/* List */
+ul.list{
+    max-width:600px;
+    margin:0 auto;
+    list-style:none;
+}
+
+ul.list li{
+    background:#f4f4f4;
+    margin:10px 0;
+    padding:12px;
+    border-left:5px solid #005aa7;
+}
+
+/* Footer */
+footer{
+    background:#003973;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Responsive Menu */
+@media(max-width:768px){
+    nav .container{
+        flex-direction:column;
+    }
+    nav ul{
+        flex-direction:column;
+        margin-top:10px;
+    }
+    nav ul li{
+        margin:10px 0;
+    }
+    .hero h1{
+        font-size:2rem;
+    }
+}
+
+.logo-bar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    background:white;
+    padding:15px 10px;
+    margin-top:70px; /* adjust because nav is fixed */
+}
+
+.logo-bar img{
+    height:95px;
+    object-fit:contain;
+}
+
+.gri70{
+    height:120px;   /* Increase more than others */
+}
+
+.ugc-text{
+    font-size:1.6rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.intl-text{
+    font-size:1.8rem;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.conf-title{
+    font-size:2.8rem;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.conf-code{
+    font-size:0.9rem;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.conf-details{
+    font-size:1rem;
+}
+
+.hero-buttons{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.brochure{
+    background:#ff9800;   /* Orange */
+}
+
+.register{
+    background:#00c6ff;   /* Your existing blue */
+}
+
+.brochure:hover{
+    background:#e68900;
+}
+
+.register:hover{
+    background:#009ec3;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+<div class="container">
+<h2 style="color:white;">GEO SDI 2026</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about_univ">About University</a></li>
+<li><a href="#about_geo">Geoinformatics</a></li>
+<li><a href="#themes">Themes</a></li>
+<li><a href="#registration">Registration</a></li>
+<li><a href="#committee">Committee</a></li>
+<li><a href="#dates">Dates</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<div class="logo-bar">
+    <img src="images/GRI70.png" class="gri70" alt="GRI 70 Years">
+    <img src="images/Gandhi.jpg" alt="Mahatma Gandhi">
+    <img src="images/UGC.jpg" alt="UGC Logo">
+    <img src="images/logo.jpg" alt="GRI Logo">
+    <img src="images/GRI50.png" alt="GRI 50 Years">
+   
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+<div class="hero-overlay">
+    <p class="ugc-text">UGC Sponsored</p>
+
+    <h2 class="intl-text">International Conference</h2>
+
+    <h1 class="conf-title">
+        Geoinformatics for Sustainable Development & Innovation
+    </h1>
+
+    <p class="conf-code">(GEO SDI 2026)</p>
+
+    <p class="conf-details">
+        11th – 13th March 2026 | Silver Jubilee Hall, GRI | Hybrid Mode
+    </p>
+    <div class="hero-buttons">
+    <a href="documents/GEO-SDI-2026-Brochure.pdf" class="btn brochure" download>
+        Download Brochure
+    </a>
+
+    <a href="https://forms.gle/xPhtpbvMBmDFAuX97" class="btn register">
+        Register Now
+    </a>
+</div>
+   
+</div>
+
+</div>
+
+<!-- Home -->
+<section id="home">
+<h2 class="section-title">About the Conference</h2>
+<p style="max-width:800px;margin:auto;text-align:justify;">
+GEO SDI 2026 aims to create a global platform for advancing research and innovation in Geoinformatics 
+towards Sustainable Development Goals (SDGs). The conference integrates Remote Sensing, GIS, GNSS, 
+Artificial Intelligence and spatial analytics to address environmental, urban and socio-economic challenges.
+</p>
+</section>
+
+<!-- University -->
+<section id="about_univ">
+<h2 class="section-title">About the University</h2>
+
+<div class="about-container">
+
+    <div class="about-image">
+      <img src="images/GRIadmin.jpg" alt="University Image">
+    </div>
+
+    <div class="about-text">
+        <p>
+       The Gandhigram Rural Institute (Deemed to be University), Dindigul was founded in the disciple couple of Gandhiji in 1956, Dr. G. Ramachandran & Dr. T. S. Soundaram. Duly witnessing the astonishing contribution of GRI in the multiple spheres of academia to the rural development, the University Grants Commission, Govt. of India, New Delhi, conferred on it the status of a Deemed to be University in 1979. The National Assessment and Accreditation Council (NAAC), Bangalore, has accredited the Institute with ‘A++’ grade status in fourth Cycle in 2025. The Institute offers Doctoral,  Masters and Bachelor's Degrees, Diploma and Certificate programmes through its eight academic schools. It is one of the most highly placed centres on rural higher education in the country, funded fully by UGC and governed by the Ministry of Education, Government of India, New Delhi
+        </p>
+    </div>
+
+</div>
+</section>
+
+<!-- Centre -->
+<section id="about_geo">
+<h2 class="section-title">About the Centre for Geoinformatics</h2>
+
+<div class="about-geo-container">
+
+    <div class="about-geo-text">
+        <p>
+        The Centre aims at developing human resource in Geoinformatics to face the future challenges of the Earth system dynamics  and  the related  natural resources, ecosystems and its aberrations including the natural disasters and the anthropogenic dynamics confronting  India. The two academic programmes, M.Sc., Geoinformatics, a two year programme offered since 2002 and PG Diploma in Spatial Technologies, an innovative two semester programme conducted since 2007 are the flagship programmes attracting students from Tamil Nadu and the other parts of the country. The Centre is manned by well qualified team of faculties and has the state-of-the-art facilities to deservingly capitalise the virtues of Geoinformatics and Geo spatial technologies to effectively address the above issues. The Centre has hosted various Workshops, Seminars, Guest Lectures, Conferences and also has ongoing and completed Major Research Projects funded by various organizations like ISRO, DST-New Delhi, Government of Tamil Nadu, etc., for more than a decade.
+        </p>
+    </div>
+
+    <div class="about-geo-image">
+        <img src="images/Geo.jpg" alt="Centre for Geoinformatics">
+    </div>
+
+</div>
+</section>
+
+<!-- Themes -->
+<section id="themes" style="background:#f9f9f9;">
+<h2 class="section-title">Conference Themes</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+<div class="card-content">
+<h4>Climate Change & Sustainability</h4>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
+<div class="card-content">
+<h4>Smart Cities & Infrastructure</h4>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<div class="card-content">
+<h4>Agriculture & Precision Farming</h4>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<div class="card-content">
+<h4>Water & Hydrology</h4>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Registration -->
+<section id="registration">
+<h2 class="section-title">Registration Fee</h2>
+<table>
+<tr>
+<th>Category</th>
+<th>Indian</th>
+<th>Foreigner</th>
+</tr>
+<tr>
+<td>Industrial Participants</td>
+<td>₹2,500</td>
+<td>$30</td>
+</tr>
+<tr>
+<td>Academician</td>
+<td>₹2,000</td>
+<td>$25</td>
+</tr>
+<tr>
+<td>Research Scholars</td>
+<td>₹1,500</td>
+<td>$20</td>
+</tr>
+<tr>
+<td>Student</td>
+<td>₹1,000</td>
+<td>$15</td>
+</tr>
+</table>
+<p style="text-align:center;margin-top:15px;">
+Includes Lunch, Refreshments & Conference Kit
+</p>
+</section>
+
+<!-- Organizing Committee -->
+<section id="committee" style="background:#f9f9f9;">
+<h2 class="section-title">Conference Organizing Committee</h2>
+
+<div class="grid">
+
+<div class="card">
+<h4>Chief Patron</h4>
+<p><strong>Prof. Dr. N. Panchanatham</strong><br>
+Vice-Chancellor<br>
+GRI Gandhigram</p>
+</div>
+
+<div class="card">
+<h4>Co-Patron</h4>
+<p><strong>Dr. R. Venkataravi</strong><br>
+Dean, School of Health Sciences & Rural Development</p>
+</div>
+
+<div class="card">
+<h4>Convenor</h4>
+<p><strong>Dr. M. Muthukumar</strong><br>
+Associate Professor & Director In-Charge<br>
+Centre for Geoinformatics</p>
+</div>
+
+<div class="card">
+<h4>Co-Convenors</h4>
+<p>
+Dr. M. Sundaramari<br>
+Dr. A. Rajeshwari<br>
+Dr. K. Ezhilarasan<br>
+Dr. M. Subagunasekar<br>
+Dr. S. Gunasekaran
+</p>
+</div>
+
+<div class="card">
+<h4>Organizing Members</h4>
+<p>
+Mr. M. Palanimuthu<br>
+Mr. R. Abishek<br>
+Ms. S. Mohana Sankare<br>
+Ms. S. Dhanyasri<br>
+Mr. M. Kaviyarasu<br>
+Mr. Mainak Dhanantari
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- Important Dates -->
+<section id="dates" style="background:#f9f9f9;">
+<h2 class="section-title">Important Dates</h2>
+<ul class="list">
+<li>Last Date for Abstract: 04.03.2026</li>
+<li>Full Paper Submission: 05.03.2026</li>
+<li>Acceptance Intimation: 06.03.2026</li>
+<li>Registration Payment: 06.03.2026</li>
+</ul>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<p style="text-align:center;">
+<strong>Dr. M. Muthukumar</strong><br>
+Convenor, GEO SDI 2026<br>
+Centre for Geoinformatics, GRI Gandhigram<br>
+Mobile: +91 98655 05886<br>
+Email: geoinformaticsgridu@gmail.com
+</p>
+</section>
+
+<footer>
+<p>© 2026 GEO SDI | Centre for Geoinformatics | GRI Gandhigram</p>
+</footer>
+
+</body>
+</html>
+
